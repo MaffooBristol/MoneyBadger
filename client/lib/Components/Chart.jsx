@@ -29,10 +29,12 @@ const displayLines = {
 };
 
 const groupByButtonValues = [
-  ['Day', 'day'],
-  ['Weeks', 'week'],
-  ['Months', 'month'],
-  ['Year', 'year'],
+  { title: 'Day', key: 'day', number: 1 },
+  { title: 'Weeks', key: 'week', number: 1 },
+  { title: 'Months', key: 'month', number: 1 },
+  { title: '3M', key: 'month', number: 3 },
+  { title: '6M', key: 'month', number: 6 },
+  { title: 'Year', key: 'year', number: 1 },
 ];
 
 const groupByTypeButtonValues = [
@@ -160,11 +162,11 @@ export class Chart extends React.Component {
       return (
         <button
           style={style.actions.action}
-          disabled={this.state.groupBy === groupBy[1]}
-          onClick={this.loadData.bind(this, { groupBy: groupBy[1] })}
-          key={groupBy[1]}
+          disabled={this.state.groupBy === groupBy.key && this.state.groupByNumber === groupBy.number}
+          onClick={this.loadData.bind(this, { groupBy: groupBy.key, groupByNumber: groupBy.number })}
+          key={groupBy.key}
         >
-          {groupBy[0]}
+          {groupBy.title}
         </button>
       );
     });

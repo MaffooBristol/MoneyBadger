@@ -27,7 +27,7 @@
     "@babel/polyfill": "^7.4.4",
     "async": "^2.0.1",
     "bluebird": "^3.4.1",
-    "couchbase": "^2.4.6",
+    "couchbase": "^3.2.3",
     "csvtojson": "^1.0.0",
     "express": "^4.16.4",
     "glob": "^7.0.5",
